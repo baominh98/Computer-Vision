@@ -1,3 +1,3 @@
 from pylab import *
 s = ([225,200],[200,300])
-print(np.linalg.det(s) - 0.04*525)
+print(6.59666407e+01)

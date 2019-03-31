@@ -36,8 +36,10 @@ Wmn = 1
 s11 = 0
 s12 = 0
 s22 = 0
+print('B3')
 for i in range(x):
     for j in range(y):
+        s = np.zeros([2,2])
         for m in range(i-D, i+D+1):
             for n in range(j-D, j+D+1):
                 if m>x-1 or n >y-1:
@@ -53,9 +55,6 @@ for i in range(x):
                 s = s+_s*Wmn
         
         A[i,j] = np.linalg.det(s) - (s[0,0]+s[1,1])*0.04
-        if A[i,j]<0:
-            A[i,j] = 0
-        s = np.zeros([2,2])
 print('B4')
 for i in range(x):
     for j in range(y):
@@ -70,11 +69,27 @@ for i in range(x):
         if A[i-1, j+1] < A[i, j] or A[i+1, j-1] < A[i, j]:
             continue
         A[i, j] = 0
+A = (A - A.min())*255/(A.max() - A.min())
+print('B5')
+print(A)
+while(1):
+    try:
+        Nguong = int(input('Nhap Gia Tri nguong: '))# 20
+        break
+    except Exception:
+        print('Vui Long Nhap So')
 
+for i in range(x):
+    for j in range(y):
+        if A[i, j] > Nguong:
+            print(A[i, j])
+            A[i, j] = 255
+        else: 
+            A[i, j] = 0
 print(A)
 figure()
 imshow(A)
-img1[A>0.01*A.max()]=[0,0,255]
+img1[A>0.01*A.max()]=[255,0,0]
 figure()
 imshow(img1)
 show()
