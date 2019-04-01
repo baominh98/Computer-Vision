@@ -3,7 +3,7 @@ from PIL import Image
 import cv2
 
 
-def Harris1(img, Nguong, D = 1, Wmn = 1):
+def Harris(img, Nguong, D = 1, Wmn = 1):
     title('IMG')
     imshow(img)
     prewittx = array([[1, 0, -1], [1, 0, -1], [1, 0, -1]])
@@ -63,10 +63,10 @@ while(1):
         break
     except Exception:
         print('Vui Long Nhap So')
-A = Harris1(img, Nguong)
+A = Harris(img, Nguong)
 figure()
 imshow(A)
-img1[A>0.01*A.max()]=[255,0,0]
+img1[A==255]=[255,0,0]
 figure()
 imshow(img1)
 show()
