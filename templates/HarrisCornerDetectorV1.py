@@ -49,6 +49,9 @@ def Harris1(img, Nguong, D = 1, Wmn = 1):
             else: 
                 A[i, j] = 0
     return A
+
+
+    
 img = array(Image.open('static/chess.jpg').convert('L'))  # convert('L'))=>trang den
 img1 = Image.open('static/chess.jpg')
 img1 = array(img1)
