@@ -11,7 +11,12 @@ def Tong(N, Ak):
 N = np.zeros(6)
 Y = np.zeros(6)
 for i in range(6):
-    N[i] = input("Nhap So lan tung So " + str(i+1) + ": ")
+    while(1):
+        try:
+            N[i] = input("Nhap So lan tung So " + str(i+1) + ": ")
+            break
+        except:
+            print('Vui Long Nhap So')
 Ak = np.ones(6)
 T = Tong(N,Ak)
 for i in range(6):
