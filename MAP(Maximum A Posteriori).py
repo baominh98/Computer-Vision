@@ -4,7 +4,7 @@ from pylab import *
 def Tong(N, Ak):
     T = 0
     for i in range(6):
-        T = N[i] + Ak[i] -1 + T
+        T = N[i] + Ak[i] + T
     return T
 
 
@@ -20,5 +20,5 @@ for i in range(6):
 Ak = np.ones(6)
 T = Tong(N,Ak)
 for i in range(6):
-    Y[i] = (N[i] + Ak[i] -1)/T
+    Y[i] = (N[i] + Ak[i])/T
 print(Y)
