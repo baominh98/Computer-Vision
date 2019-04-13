@@ -21,4 +21,4 @@ Ak = np.ones(6)
 T = Tong(N,Ak)
 for i in range(6):
     Y[i] = (N[i] + Ak[i])/T
-print(Y)
+    print("Lamda cua so thu " + str(i+1) + ": " + str(Y[i]))
