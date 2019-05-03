@@ -3,7 +3,7 @@ import numpy
 from PIL import Image
 import cv2
 
-def HOG_funtion(ImgInput = '3.png'):
+def HOG_funtion(ImgInput = '200anh/4-4.png'):
     W = (64,64)
     Sw = (8,8)
     Sb = (16,16)

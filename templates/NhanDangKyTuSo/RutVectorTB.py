@@ -18,8 +18,7 @@ V = numpy.zeros(1764)
 for j in range(0,10):
     for i in range(1,21):
         hogVector = HOG.HOG_funtion('200anh/'+str(j)+'-'+str(i)+'.png')
-        print(len(hogVector))
-        
+        #print(len(hogVector))
         for i in range(len(hogVector)):
             V1[i] = hogVector[i]/20
         V = V1 + V
